@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>ツナ🐟のテストページ</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet"href="./css/style2.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+    <style>
+   .mark1{
+      background: linear-gradient(transparent 60%, #ffca28 80%)
+   }
+   
+  .normal-box1{
+   width: 200px;
+  margin: 1em 0;
+  padding: 10px;
+  border: dashed 3px #ffca28;
+}
+.normal-box2{
+   width:700px;
+   margin: 1em 0;
+   padding: 1em;
+   border: dashed 4px black
+}
+
+
+       </style>
+</head>
+<body>
+    <h1>第一回</h1>
+    <h2> <mark class="mark1">
+      
+         git（分散型バージョン管理システム）とは？？
+   
+      </mark></h2>  
+
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <div>
+            <b>ファイルのバージョン管理（履歴管理）が簡単にできるツール</b><br>
+
+            gitの導入によって、<br>
+             <b>誰が、どのファイルに、何を書き込んだのか、何を削除して、変更前はどういう状態だったのか</b>を
+         保存し管理できるようになる。<br>また必要であれば、前バージョンまで戻ることが可能。
+         <br>
+         <br>
+
+         </div>
+         <ul>
+            <h2 class="normal-box1">
+              
+                ⓵gitの特徴
+
+            </h2>
+            <li>前のバージョンにファイルを戻せる</li>
+            <li>同じファイルを複数の人で編集できて、それを統合できる（上書きにならない）
+            </li>
+            <li>履歴を共有できる</li>
+            <br>
+         </ul>
+         ※イメージ図
+         <div >
+         <img src="./images/gitの概念.JPG"width=40%>
+         
+            <p class="normal-box2">
+
+            add:ファイルを編集したことをインデックスに登録する作業（履歴を残す前準備）<br>
+            <br>
+
+            commi:addを行った後に、自分ローカルリポジトリに作業内容の履歴を保存する作業のこと。内容・日時・作業者を記録したファイルが生成されて保存される<br>
+            <br>
+                  
+            pull:他の人の作業した履歴を自分のローカルリポジトリのファイルに繁栄される作業。<br>
+            <br>
+
+            push:自分のローカルリポジトリにあるファイルをリモートリポジトリにアップして保存する作業。<br>
+            <br>
+
+            リポジトリ:ファイルや履歴を保存するための保存庫<br>
+            <br>
+            リモートリポジトリ:webサーバーにおかれており、共有で使用する。<br>
+            <br>
+            ローカルリポジトリ:各PCの中におかれており、各ユーザーごとに使用する。
+            </p>
+         
+         </div>
+         <div>
+            参考文献<br>
+         <a href="https://qiita.com/a_goto/items/0fe40b17105d1ac1c40b" target="_blank">【初心者向け】GITとは何か？GIT の概念を解説
+            </a>
+         </div>
+       
+         
+         <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
+         <!-- ③↓に箇条書きをしてみよう -->
+
+         <!-- ④↓に外部リンクを作ってみよう -->
+
+    </div>
+
+</body>
+</html>
