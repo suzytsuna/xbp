@@ -4,11 +4,18 @@
     <!-- ⑥↓タイトルを変えてみよう -->
     <title>ツナ🐟のテストページ</title>
     <!-- ⑤スタイルシートの設定をしよう -->
-    <link rel="stylesheet"href="./css/style2.css">
+    <link rel="stylesheet"href="./css/style.css">
     <!-- h1.htmlからある行をコピペしてくればOK -->
     <style>
    .mark1{
       background: linear-gradient(transparent 60%, #ffca28 80%)
+   }
+
+   .mark2{
+
+      background: linear-gradient(transparent 50%, #ff7f7f 80%);
+      display: inline-block;
+    
    }
    
   .normal-box1{
@@ -21,9 +28,16 @@
    width:700px;
    margin: 1em 0;
    padding: 1em;
-   border: dashed 4px black
+   border: dashed 1px black
 }
-
+.normal-box3{
+   padding: 0 1rem 1rem;
+    border: dashed 2px  #ff7f7f;
+}
+.normal-box3 .under{
+      border-bottom:solid #ff7f7f;
+      display: inline-block;
+      }
 
        </style>
 </head>
@@ -31,7 +45,7 @@
     <h1>第一回</h1>
     <h2> <mark class="mark1">
       
-         git（分散型バージョン管理システム）とは？？
+        1⃣ git（分散型バージョン管理システム）とは？？
    
       </mark></h2>  
 
@@ -50,7 +64,7 @@
          <ul>
             <h2 class="normal-box1">
               
-                ⓵gitの特徴
+                gitの特徴
 
             </h2>
             <li>前のバージョンにファイルを戻せる</li>
@@ -90,8 +104,52 @@
          <a href="https://qiita.com/a_goto/items/0fe40b17105d1ac1c40b" target="_blank">【初心者向け】GITとは何か？GIT の概念を解説
             </a>
          </div>
-       
+         <h2 class="mark2">
+            2⃣HTMLとは？？
+         </h2> 
+         <p>
+           <b>Webページの記述言語。</b> <br>
+           HTMLのルールにしたがって記述されたテキストファイルをHTMLドキュメントと呼び、<br>
+           これをブラウザが読み込むことでWebページを表示できる。<br>
+            正式名称は<b>”HyperText Markup Langage"</b>
+         </p>     
+        
+         <div class="normal-box3">
+            <h3 class="under" >
+               HTMLを構成する3つの用語
+            </h3>  
+            <p>  
+            <h4>1,Web上での表現方法を決める「タグ」</h4>
+            
+            
          
+            　HTMLファイルに記述したテキストデータなどに対して、<b>Web上でどのように表現するかを定義する。</b><br>
+            　＜＞で始まり（開始タグ）＜/＞で終わる（終了タグ）<br>
+            
+            
+           <h4> 2,Web上で実際に表示される「要素」</h4>
+            
+
+            　<b>開始タグと終了タグに囲まれたテキスト</b><br>
+            　タグでか米れた要素の内容が、Webに表示される。
+
+            <h4>3,タグの性質を決める「属性」</h4>
+            　タグの種類によって様々な属性が存在する。<br>　また、属性が使われた場合は終了タグがいらない。
+            <br>
+            <br>
+            タグと要素のイメージ図
+            <br>
+            <img src="./images/HTML youso tagu.jpg"width=30%><br><br>
+            属性のイメージ図<br>
+            <img src="./images/HTML zokusei.jpg"width=30%><br>
+            </p>
+
+            参考文献
+            <a href="https://www.itra.co.jp/webmedia/what-is-html.html">HTMLとは？HTMLの基本を分かりやすく解説！</a>
+            <br>
+            <a href="https://www.sejuku.net/blog/6026#index_id2">HTMLとは？できることや基本のタグを初心者向けにわかりやすく解説</a>
+         
+         </p>
          <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
          <!-- ③↓に箇条書きをしてみよう -->
 
