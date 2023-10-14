@@ -27,7 +27,7 @@ html, body {
 	color: #393939;
     margin-left: 15px;
     margin-bottom: 40px;
-	background: #efefef;
+	background:#e3ded5;
 }
 h1{
     text-indent: 0em;
@@ -52,3 +52,31 @@ span.blackback{
     color: #efefef;
 }
 
+.box26 {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #9DDCDC;
+    border-radius: 8px;
+}
+.box26 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 25px;
+    background: #FFF;
+    color: #9DDCDC;
+    font-weight: bold;
+}
+.line1{
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */   
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: 2em;
+    border-bottom: dashed 2px #9DDCDC;/* 線 */
+    color: #9DDCDC;/* フォント色 */
+    }
