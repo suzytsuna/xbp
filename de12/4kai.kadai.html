@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>ツナ🐟のテストページ</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet"href="./css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1>プログラミング課題</h1>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <div>
+            <h2>PK戦ゲーム</h2>
+            <h2>概要
+            </h2>
+            <p>わたしたちの班はPK戦をモデルにしたゲームを作成しました。</p>
+            <pre><code><p style="background-color: rgb(160, 207, 203);">
+                print ("チームの勝敗がかかったＰＫ！さあ、どうする！？")
+        name=input("プレーヤーの名前を入れてください")
+        print(name,"さんはキーパーです")
+
+        c=0
+        for i in range (3):
+            print(i,"回目")
+        
+            a=int(input("1,右2,真ん中3,左の中で好きな数字を選んでね"))
+            print(a)
+            import random
+            b =int( random.randint(1, 3))
+            print(b)
+            if a==b:#コンピューターと同じ数字を選んだ
+                c=c+1
+                print("とめた！")
+            else:#違う数字を選んだ
+                print("逃した...")
+            if c>=2:#３回中２回以上勝った
+                print("おめでとう！あなたはチームを勝利へ導いた英雄として称えられた！！")
+            else:#３回中２回負けた
+                print("残念、もう一度このゲームにチャレンジしよう！")
+            </div>
+
+         <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
+        
+
+    </div>
+
+</body>
+</html>
