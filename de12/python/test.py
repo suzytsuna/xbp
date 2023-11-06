@@ -10,7 +10,7 @@ yt = YouTube(url)
 stream = yt.streams.filter(only_audio=True).first()
 
 # 音声を指定のフォルダにダウンロード
-output_folder = 'C:/Users/suzyt/OneDrive/音楽フォルダー'  # バックスラッシュまたは正斜線を使用
+output_folder = 'C:/Users/suzyt/OneDrive/music'  # バックスラッシュまたは正斜線を使用
 stream.download(output_path=output_folder)
 
 print('音声をダウンロードしました。')

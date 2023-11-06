@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>ツナ🐟のテストページ</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet"href="./css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1>プログラム　自動化 </h1>
+    <h2>～作譜の自動化～</h2>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <div>
+            私が今回自動化に挑戦したのは「作譜」です。<br>
+            私はアカペラサークルに所属しており、そこでやっているのが「アレンジ」。<br>
+            その「アレンジ」を効率よくやりたい！！という願望を叶えるために思いついたのが「作譜の自動化」です！<br>
+            <h3>アレンジとは
+            </h3>
+            アレンジとは、普通の音楽を声だけで演奏できるように楽譜に起こして作譜していく作業です。<br>
+            ～アレンジ完成までの工程～<br>
+            １，メロディーの耳コピ＆音符に起こして入力<br>
+            ２．コードを調べて（耳コピして）入力<br>
+            ３．ベースを入力<br>
+            ４．全体を見て人間が歌えるようにアレンジしていく。 <br>
+            ５．微調整<br>
+            完成！！<br><br>
+            ここで、ものすごく時間がかかり、かつ無駄なのは１，２，３の作業。<br>
+            アレンジ能力はほぼいらないのに、コピペができない。また、一音一音入力していくためめっちゃ時間がかかる。<br>
+            この作業を自動化できたら、早く楽譜を用意できてかつ練習に取り組むことができるし、多くの経験を積むことができる！<br>
+            ということで「作譜の自動化」にチャレンジしました。
+            <br>
+            <h3>自動化完成までのプロセス
+            </h3>
+            １．youtubeの音楽動画から音声だけを抽出（クリア！）<br>
+            ２．音声をメロディーだけのファイルにする（未完成）<br>
+            ３．musescore（アレンジに使用するソフト）と連携して、楽譜に起こしてもらう（未完成）<br>
+            <br>
+            1のプログラム<br>
+            <pre><code><p style="background-color: rgb(160, 207, 203);">
+                     from pytube # ライブラリをインストールimport YouTube
+
+                # YouTubeの動画URLを指定
+                url = 'https://www.youtube.com/watch?v=IVbY5edMfCA'
+
+                # YouTubeオブジェクトを作成
+                yt = YouTube(url)
+
+                # 音声ストリームを選択（ビデオではなく音声のみ）
+                stream = yt.streams.filter(only_audio=True).first()
+
+                # 音声を指定のフォルダにダウンロード
+                output_folder = 'C:/Users/suzyt/OneDrive/music'  
+                # バックスラッシュまたは正斜線を使用
+                stream.download(output_path=output_folder)
+
+                print('音声をダウンロードしました。')
+            </p><br>
+            ここで、youtubeの音声だけのファイル(mp4)ができた。<br>
+            2のプログラム<br>
+            <pre><code><p style="background-color: rgb(160, 207, 203);">
+                                import librosa
+                import numpy as np# numpyをインストール
+                import soundfile as sf# soundfileをインストール
+
+                # WAVファイルのパス
+                wav_file = 'xbp/de12/python/aaa.wav'  # 正しいファイル名を指定
+
+                # 音声ファイルを読み込む
+                y, sr = librosa.load(wav_file)
+
+                # 主旋律を抽出
+                melody, _ = librosa.piptrack(y=y, sr=sr)
+                melody = np.nan_to_num(melody)  # NaNを0に置き換える
+
+                # 主旋律を保存
+                output_file = 'C:/Users/suzyt/mygit/xbp/de12/python/aaa.wav'
+                sf.write(output_file, melody, sr)
+
+                print('主旋律を抽出し、保存しました。')
+            </p><br>
+            ここで、１でできたmp4ファイルだとプログラムが作動しないことが発覚。そこでmp4ファイルをwavファイルに変換するプログラムを作成。<br>
+            <pre><code><p style="background-color: rgb(160, 207, 203);">
+                from pydub import AudioSegment
+
+            # MP4ファイルのパス
+            # mp4_file = "C:/Users/suzyt/OneDrive/music/CinderellaBoy.mp4"  # 正しいファイル名を指定
+            mp4_file = "C:/Users/suzyt/mygit/xbp/de12/python/CinderellaBoy.mp4"
+
+            # WAVファイルのパス（出力先）
+            # output_wav_file = 'C:/Users/suzyt/OneDrive/music/'  # 正しいファイル名を指定
+            output_wav_file = 'C:/Users/suzyt/mygit/xbp/de12/python/aaa'  # 正しいファイル名を指定
+
+            # MP4ファイルをWAVに変換
+            audio = AudioSegment.from_file(mp4_file, format="mp4")
+            audio.export(output_wav_file, format="wav")
+
+            print('MP4ファイルをWAVに変換しました。')</p><br>
+            しかし、これがうまく作動せず…。そこで、<a href="https://ja.stackoverflow.com/questions/47625/mp3%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92wav%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ab%e5%a4%89%e6%8f%9b%e3%81%99%e3%82%8b%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%e3%82%92%e6%9b%b8%e3%81%8d%e3%81%9f%e3%81%84%e3%81%ae%e3%81%a7%e3%81%99%e3%81%8c-%e3%82%a8%e3%83%a9%e3%83%bc%e3%81%8c%e5%87%ba%e3%81%be%e3%81%99" target="_blamk">このサイト</a>
+            を参考に、「ffmpeg」をインストール。<br>
+            結果、一度はうまく作動しwavファイルが作成されたが、数日後もう一度やってみると作動せず、<br>
+            作成したはずの音声wavファイルも動かなくなっていたためそこでできなくなりました。<br>
+            一応、chatgptにpythonで音声から楽譜に起こすプログラムを作れるか聞いたところ、<br>
+            「高度な技術が必要であり大変複雑なコードとなるため、自分で聞いて作譜した方が善い」と出てきました。
+
+
+            </div>
+
+         <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
+         
+         </div>
+
+         <!-- ③↓に箇条書きをしてみよう -->
+
+         <!-- ④↓に外部リンクを作ってみよう -->
+
+    </div>
+
+</body>
+</html>
