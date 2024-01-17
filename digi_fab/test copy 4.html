@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>ツナ🐟のテストページ</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet"href="./css/style.css">
+    <style>
+        .flame1{
+font-size: 1.5em;/* フォントサイズ */
+font-weight: bold;/* フォント太さ */
+padding: 1em;
+margin-bottom: 2em;
+border: 4px double #7ec2c2 ;/* 線 */
+border-radius: 15px;/* 角丸 */
+text-align: center;/* テキストの位置 */
+color: #7ec2c2 ;/* フォント色 */
+}
+.box18{
+    margin:2em 0;
+    position: relative;
+    padding: 0.25em 1em;
+    border: solid 2px #7EC2C2;
+    border-radius: 3px 0 3px 0;
+}
+.box18:before,.box18:after
+{
+    content: '';
+    position: absolute;
+    width:10px;
+    height: 10px;
+    border: solid 2px #7EC2C2;
+    border-radius: 50%;
+}
+.box18:after {
+    top:-12px;
+    left:-12px;
+}
+.box18:before {
+    bottom:-12px;
+    right:-12px;
+}
+
+.line1{
+font-size: 1.3em;/* フォントサイズ */
+font-weight: bold;/* フォント太さ */   
+padding-top: .5em;
+padding-bottom: .5em;
+margin-bottom: 2em;
+border-bottom: dashed 2px #7ec2c2;/* 線 */
+color:
+#7ec2c2;/* フォント色 */
+display: inline-block;
+}
+    </style>
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1 class="flame1">
+        最終課題
+    </h1>
+    <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/kcO31nvX_R8?si=NTZmL0Hjt9z5weVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <p>授業中にお菓子を食べたいという欲をかなえるために作りました。<br>もし授業中に使うときは、上に教科書とかを置いて隠して使ってね☆</p>
+    <h2>出力ファイル</h2>
+    <p><li><a href="./files/bodytuna3.stl">部品１</a></li><br>
+    <li><a href="./files/bodytuna5.stl">部品２</a></li></p>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    
+        
+
+
+</body>
+</html>
