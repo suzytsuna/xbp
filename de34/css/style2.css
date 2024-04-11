@@ -27,6 +27,7 @@ html, body {
 	color: #393939;
     margin-left: 15px;
     margin-bottom: 40px;
+    background: #fdeff2;
 }
 h1{
     text-indent: 0em;
@@ -102,8 +103,20 @@ span.blackback{
     padding-top: 1em;
     padding-bottom: 1em;
     margin-bottom: 2em;
-    border-top: 3px solid rgb(107,182,255, .4);/* 上の線 */
-    border-bottom: 3px solid rgb(107,182,255, .4);/* 下の線 */
-    color: rgb(107,182,255, .4);/* フォント色 */
+    border-top: 3px solid #98af68;/* 上の線 */
+    border-bottom: 3px solid #98af68;/* 下の線 */
+    color: #98af68;/* フォント色 */
     text-align: center;/* テキストの位置 */
     }
+    .sample_h_10{
+        display:inline-block;
+        font-size: 1.5em;/* フォントサイズ */
+        font-weight: bold;/* フォント太さ */
+        padding-left: .5em;
+        padding-top: .3em;
+        padding-bottom: .3em;
+        margin-bottom: 2em;
+        border-left: 5px solid #79a326;/* 線 */
+        color: #9fc15a;/* フォント色 */
+        background-color: rgb(245, 238, 230);
+        }
