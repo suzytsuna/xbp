@@ -125,8 +125,43 @@
                 }</p>
         </div><br>
         ■温度センサーで一定の温度を測定したら、ミストを作動させるプログラミング<br>
-        ●温度センサーにＩＦのプログラミングをする<br>
-        ●ミストを作動するようにプログラミングする
+        ●ミストを作動するようにプログラミングする<br>
+        ▶リレーモジュールを使用してミスト生成機を制御した<br>
+        ▶プログラミング完成<br>
+        <div class="scroll-container">
+            <p>
+                // リレーの制御ピンを定義<br>
+             const int relayPin = 7;<br>
+             void setup() {<br>
+                // リレーの制御ピンを出力モードに設定<br>
+                pinMode(relayPin, OUTPUT);<br>
+                // 初期状態としてリレーをオフにする<br>
+                digitalWrite(relayPin, LOW);<br>
+                }<br><br>
+    
+             void loop() {<br>
+             // リレーをオンにする<br>
+                digitalWrite(relayPin, HIGH);<br>
+             // 5秒待つ<br>
+             delay(5000);<br>
+                // リレーをオフにする<br>
+             digitalWrite(relayPin, LOW);<br>
+                // 5秒待つ<br>
+             delay(5000);<br>
+             }<br>
+            </p>
+        </div>
+        ●温度センサーにＩＦのプログラミングをする<br><br>
+        ＜外観＞<br><br>
+        ■ペットボトルの付け方<br>
+        ●広げたときは骨に密着するように、たたんだときはずらせるようにする<br><br>
+        ＜動作＞<br><br>
+        ■水からミストにする<br>
+        ●ミストにする機械を購入する<br>
+        ▶ミスト生成機を購入して、動作と構造の確認<br>
+        <img src="./images/ミスト.jpg" width="25%"><br>
+        ■温度センサーで温度を感知しミストを作動させるにはどうしたらいいか<br>
+        ●ミスト生成機と温度センサーを連動させる
         <h3>使用したもの
             
         </h3><br>
