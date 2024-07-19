@@ -151,17 +151,62 @@
              }<br>
             </p>
         </div>
-        ●温度センサーにＩＦのプログラミングをする<br><br>
+        ●温度センサーにＩＦのプログラミングをする<br>
+        ▶27度以上になるとリレーモジュールのONにしてミストを作動させるプログラム完成<br>
+        <div class="scroll-container">
+            <p>// リレーの制御ピンを定義
+                const int relayPin = 7;
+                // 温度センサーの入力ピンを定義
+                const int tempSensorPin = A0;
+                // 温度の閾値を定義（摂氏温度）
+                const float thresholdTemp = 27.0;
+                void setup() {
+                // リレーの制御ピンを出力モードに設定
+                pinMode(relayPin, OUTPUT);
+                // 初期状態としてリレーをオフにする
+                digitalWrite(relayPin, LOW);
+                // シリアル通信を開始
+                Serial.begin(9600);
+                }
+                void loop() {
+                // 温度センサーの値を読み取る
+                int sensorValue = analogRead(tempSensorPin);
+                // 電圧に変換（Arduinoの3.3V基準で）
+                float voltage = sensorValue * (5000.0 / 1023.0);
+                // 温度に変換（LM35は10mV/°C）
+                float temperature = (voltage-600)/10;
+                // シリアルモニタに温度を出力
+                Serial.print("Temperature: ");
+                Serial.print(temperature);
+                Serial.println(" °C");
+                // 温度が閾値を超えたらリレーをオンにする
+                if (temperature > thresholdTemp) {
+                digitalWrite(relayPin, HIGH);
+                } else {
+                // 温度が閾値以下ならリレーをオフにする
+                digitalWrite(relayPin, LOW);
+                }
+                // 1秒待つ
+                delay(1000);
+                }
+            </p>
+        </div>
         ＜外観＞<br><br>
         ■ペットボトルの付け方<br>
-        ●広げたときは骨に密着するように、たたんだときはずらせるようにする<br><br>
+        ●広げたときは骨に密着するように、たたんだときはずらせるようにする<br>
+        ■ミスト生成機を付ける。●傘の先端に着ける<br>
         ＜動作＞<br><br>
         ■水からミストにする<br>
         ●ミストにする機械を購入する<br>
         ▶ミスト生成機を購入して、動作と構造の確認<br>
         <img src="./images/ミスト.jpg" width="25%"><br>
         ■温度センサーで温度を感知しミストを作動させるにはどうしたらいいか<br>
-        ●ミスト生成機と温度センサーを連動させる
+        ●ミスト生成機と温度センサーを連動させる▶完成<br>
+        ■ペットボトルの水を吸い上げてミスト生成機に水を送る装置●プロペラを作る●水を吸い上げる装置を作る<br><br>
+        ＜IoT＞
+        　　■温度センサーで取得した気温データを「dflink」でグラフ化し、LINEと連携させて「例：２７度以上が30分続いたらLINEで、水分補給を促したり休憩をとるよう注意を出したりする」などができるようにする。<br>
+        　　●温度センサーで感知した温度をdflinkでグラフ化する<br>
+        　　●dflinkとLINEの連携を行い、注意報などを送れるようにする。<br>
         <h3>使用したもの
             
         </h3><br>
