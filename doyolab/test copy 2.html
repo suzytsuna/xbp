@@ -1,34 +1,204 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
-    <!-- ⑥↓タイトルを変えてみよう -->
-    <title>ツナ🐟</title>
-    <!-- ⑤スタイルシートの設定をしよう -->
-    <link rel="stylesheet"href="./css/style.css">
-    <!-- h1.htmlからある行をコピペしてくればOK -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鎌倉共創プロジェクト 活動報告</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* フォント設定 (Interを使用しつつ日本語フォントも指定) */
+        :root {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        /* セクション間の区切り線をカスタマイズ */
+        .section-divider {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            height: 1px;
+            background-color: #e5e7eb; /* gray-200 */
+        }
+    </style>
 </head>
-<body>
-    <h1>2025横浜サーキュラープロジェクト</h1>
-    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
-    <div>
-        やったこと<br>
-       <ul>
-          <li>0422</li><br>
-          やりたい事業を選択（紙を扱ったものになりそう）<br><br>
-          <li>0418</li><br>
-          メンバー決め<br>
-          つなしま　うめ　すず　きいち
-          
-       </ul>
+<body class="bg-gray-50 min-h-screen p-4 md:p-8">
 
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-3xl p-6 md:p-12 border border-gray-100">
 
-         
-         
-         </div>
+        <!-- 1. ヘッダー -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-2">
+                鎌倉共創プロジェクト 活動報告
+            </h1>
+            <p class="text-xl text-gray-600 font-medium">市民の声から生まれる新しいサービス</p>
+        </header>
 
-         <!-- ③↓に箇条書きをしてみよう -->
+        <!-- 2. プロジェクト概要 -->
+        <section class="mb-10 p-6 bg-blue-50 rounded-xl shadow-inner">
+            <h2 class="text-3xl font-bold text-blue-700 mb-4 border-b-2 border-blue-200 pb-2">
+                プロジェクト概要
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                本プロジェクトは、鎌倉市内のコミュニティースペース **COCORU** を拠点に活動しました。
+                市民の方々やデイサービスを利用されている方々に直接お話を伺い、その生の声（インサイト）を収集しました。
+                収集したデータは、**共起ネットワーク**などの分析ツールを用いて構造化し、鎌倉市民が日常生活で直面している**潜在的な課題**を特定。
+                最終的に、その課題を解決するための具体的なサービスの企画・開発を目標としました。
+            </p>
+        </section>
 
-         <!-- ④↓に外部リンクを作ってみよう -->
+        <div class="section-divider"></div>
+
+        <!-- 3. インタビュー活動 -->
+        <section class="mb-10">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                インタビュー活動：声を聞く
+            </h2>
+            
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 mb-6">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-3">
+                    実施メンバー
+                </h3>
+                <ul class="flex flex-wrap gap-4 text-lg font-medium text-gray-600">
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 あやな</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 うめ</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 ももか</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 すずか</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 border-l-4 border-amber-500 pl-3">
+                インタビューの様子と考察
+            </h3>
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- 写真プレースホルダー -->
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/800x600/1e40af/ffffff?text=Interview+Scene+Photo" 
+                         alt="インタビューの様子のイメージ写真" 
+                         class="rounded-xl shadow-lg w-full h-auto object-cover">
+                    <p class="text-sm text-gray-500 mt-2 text-center">
+                        （COCORUでのインタビューの様子）
+                    </p>
+                </div>
+                <!-- 考察 -->
+                <div class="md:w-1/2 p-4 bg-amber-50 rounded-xl shadow-md">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        様々な年齢層の方々からお話を聞く中で、「ルールが複雑で面倒に感じる」という共通のストレスが浮かび上がった。
+                        特に、地域に根差した生活習慣や、情報アクセスの難しさなど、世代や立場によって異なる課題が見られた。
+                        この「複雑さの解消」が、生活の質を高める重要な鍵になると考え、次の課題設定に進んだ。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 4. 課題設定 -->
+        <section class="mb-10 p-6 bg-red-50 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold text-red-700 mb-4 border-b-2 border-red-200 pb-2">
+                特定した課題
+            </h2>
+            <div class="bg-white p-4 rounded-lg shadow-inner border-l-4 border-red-500">
+                <p class="text-xl font-bold text-gray-800 mb-2">
+                    鎌倉市のごみの出し方が複雑で難しく、めんどくさい
+                </p>
+                <p class="text-lg text-gray-700">
+                    市民の方々からは「分別ルールが細かすぎる」「冊子やウェブサイトを見るのが手間」といった声が多く聞かれました。
+                    市民の皆さんが**もっと楽にごみの分別を理解し、実行できる**システムが求められていた。
+                </p>
+                <ul class="flex flex-wrap gap-4 text-lg font-medium text-gray-600">
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 あやな</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 いつき</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 ももか</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 すずか</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 きいち</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 あつき</li>
+                    <li class="p-2 bg-gray-100 rounded-lg shadow-sm">👤 かいと（外国語学部の後輩）</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 5. 開発サービス -->
+        <section class="mb-10">
+            <h2 class="text-3xl font-bold text-green-700 mb-6 border-l-4 border-green-500 pl-3">
+                開発したソリューション（成果物）
+            </h2>
+            <div class="bg-green-50 p-6 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-semibold text-green-800 mb-4">
+                    AIごみ分別判定システム (LINE連携)
+                </h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    課題解決のため、写真を撮って送るだけで、写っているものが**何ごみなのか**をAIが判定し、返信してくれるシステムを開発しました。
+                </p>
+                <ul class="space-y-2 text-lg text-gray-700">
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span class="font-bold">連携技術:</span> LINE (ユーザーインターフェース) と AI (画像認識・分別判定)
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <span class="font-bold">機能:</span> 写真を送信すると、AIが対象物を識別し、正しいごみ種別（燃やすごみ、プラスチックなど）を返信。
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 6. 結果と今後の展望 -->
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold text-purple-700 mb-6 border-l-4 border-purple-500 pl-3">
+                結果とユーザーからのフィードバック
+            </h2>
+
+            <div class="bg-purple-50 p-6 rounded-xl shadow-lg mb-6">
+                <h3 class="text-2xl font-semibold text-purple-800 mb-3">
+                    結果
+                </h3>
+                <p class="text-xl font-bold text-gray-800">
+                    <span class="text-4xl text-purple-600 mr-2">◎</span>かなり好感触。
+                </p>
+                <p class="text-lg text-gray-700 mt-2">
+                    「これは便利！」「これなら使える」といった評価を多数いただき、直感的な操作性が市民のニーズに合致していることが確認できた。
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                <h3 class="text-2xl font-semibold text-purple-700 mb-4">
+                    今後の改善に向けた意見
+                </h3>
+                <ul class="space-y-4 list-none pl-0">
+                    <li class="flex items-start">
+                        <span class="flex-shrink-0 text-xl text-amber-500 mr-3">💡</span>
+                        <div>
+                            <span class="font-bold text-gray-800">視覚補助の要望:</span>
+                            目が見えない人や見えにくい人のために、分別結果を音声で読み上げる<b>読み上げツール</b>を搭載してほしい。
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="flex-shrink-0 text-xl text-amber-500 mr-3">💡</span>
+                        <div>
+                            <span class="font-bold text-gray-800">収集日の情報連携:</span>
+                            ごみ種別の判定だけでなく、そのごみを<b>出せる曜日</b>も一緒に出してほしい。
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="flex-shrink-0 text-xl text-amber-500 mr-3">💡</span>
+                        <div>
+                            <span class="font-bold text-gray-800">出し方の詳細提示:</span>
+                            「燃やすごみ」といった種別だけでなく、<b>実際の出し方</b>（例：紙ごみは縛って出すなど）も提示してほしい。
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 7. フッター -->
+        <footer class="text-center mt-12 pt-6 border-t border-gray-200">
+            <p class="text-md text-gray-500">
+                鎌倉共創プロジェクト | 2025年 活動報告
+            </p>
+        </footer>
 
     </div>
 
