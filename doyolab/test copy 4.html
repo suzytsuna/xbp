@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服の想いを紡ぐリメイク・ワークショップ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- 基本設定 --- */
+        :root {
+            --primary-color: #ff8e5d;
+            --accent-color: #4eccb8;
+            --tech-color: #4a90e2; /* テクノロジーを感じさせる青 */
+            --text-color: #4a4a4a;
+            --bg-color: #fffaf0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 { margin: 0; font-weight: 700; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+        img { max-width: 100%; height: auto; border-radius: 10px; }
+
+        /* --- コラボレーションバナー --- */
+        .collab-banner {
+            background-color: var(--text-color);
+            color: var(--white);
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .collab-banner span {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        /* --- ヘッダー --- */
+        .hero {
+            background-color: #ffe4d9;
+            /* 背景画像を設定してください */
+            background-image: url('https://placehold.jp/1200x600.png?text=Workshop+Image'); 
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+        }
+        .hero-content { position: relative; z-index: 1; }
+        
+        .hero-tag {
+            background-color: var(--tech-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+        .hero p.subtitle { font-size: 1.1rem; font-weight: bold; }
+
+        /* --- 共通セクション --- */
+        section { padding: 60px 0; }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-title::after {
+            content: ""; display: block; width: 100%; height: 3px;
+            background-image: linear-gradient(to right, var(--accent-color) 50%, transparent 50%);
+            background-size: 10px 100%; margin-top: 5px;
+        }
+
+        /* --- コンセプト --- */
+        .concept { background-color: var(--white); text-align: center; }
+        .concept-text { max-width: 700px; margin: 0 auto; }
+
+        /* --- デジタル×アナログ機能 (NFC) --- */
+        .tech-feature {
+            background-color: #e3f2fd; /* デジタルっぽい薄い青 */
+            text-align: center;
+        }
+        .tech-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.15);
+            border: 2px solid var(--tech-color);
+        }
+        .tech-icon {
+            font-size: 3rem;
+            color: var(--tech-color);
+            margin-bottom: 20px;
+        }
+        .tech-steps {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .tech-step-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        .arrow-icon {
+            font-size: 1.5rem;
+            color: var(--tech-color);
+            margin-top: 30px; /* 位置調整 */
+            display: none; /* スマホでは非表示にするなど */
+        }
+        @media (min-width: 768px) { .arrow-icon { display: block; } }
+
+        /* --- 子供から親へ (Gift) --- */
+        .gift-section {
+            background-color: #fff5f5;
+            text-align: center;
+        }
+        .gift-message {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d65a5a;
+            margin-bottom: 20px;
+        }
+
+        /* --- 制作の流れ --- */
+        .process-list { list-style: none; padding: 0; max-width: 700px; margin: 0 auto; }
+        .process-item {
+            display: flex; align-items: center; background: var(--white);
+            margin-bottom: 15px; padding: 15px; border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .process-step {
+            background: var(--primary-color); color: var(--white);
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 20px; flex-shrink: 0;
+        }
+
+        /* --- CTAボタン --- */
+        .cta-button {
+            display: block; width: 100%; max-width: 300px; margin: 0 auto;
+            background-color: var(--primary-color); color: var(--white);
+            text-align: center; padding: 15px; border-radius: 50px;
+            text-decoration: none; font-weight: bold; font-size: 1.2rem;
+            transition: 0.2s; box-shadow: 0 4px 0 #d96d3d;
+        }
+        .cta-button:hover { transform: translateY(2px); box-shadow: 0 2px 0 #d96d3d; background-color: #ff7b42; }
+
+        /* --- フッター --- */
+        footer { background-color: var(--text-color); color: var(--white); text-align: center; padding: 30px 20px; font-size: 0.8rem; }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .collab-banner span { display: block; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="collab-banner">
+        <span>環境省</span> × <span>株式会社harch</span> × <span>神奈川大学 道用ゼミ</span>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-tag"><i class="fa-solid fa-mobile-screen"></i> スマホをかざして想いを聴く</span>
+            <h1>思い出の服が、<br>声の届くプレゼントになる。</h1>
+            <p class="subtitle">子供から親へ。世界に一つの「デジタルお守り」を作ろう。</p>
+        </div>
+    </header>
+
+    <section class="concept">
+        <div class="container">
+            <h2 class="section-title">服の想いを紡ぐプロジェクト</h2>
+            <div class="concept-text">
+                <p>着られなくなった服には、たくさんの思い出が詰まっています。<br>その服をただ捨てるのではなく、親子の絆を深める特別なアイテムに変えてみませんか？</p>
+                <p>私たちは、環境省および株式会社harchと連携し、<strong>「古着リメイク」×「NFCタグ」</strong>を組み合わせた新しい体験を提案します。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-feature">
+        <div class="container">
+            <h2 class="section-title">魔法のタグで、想いを保存。</h2>
+            <div class="tech-box">
+                <p>リメイクしたストラップの中には、小さな「NFCタグ」が入っています。<br>
+                これにより、服はただのモノから、思い出を語るメディアへと進化します。</p>
+                
+                <div class="tech-steps">
+                    <div class="tech-step-item">
+                        <i class="fa-solid fa-microphone-lines tech-icon"></i>
+                        <h3>1. 想いを込める</h3>
+                        <p>ワークショップで、お子様の「ありがとう」の声やメッセージをタグに入力します。</p>
+                    </div>
+                    <div class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="tech-step-item">
+                        <i class="fa-solid fa-gift tech-icon"></i>
+                        <h3>2. プレゼントする</h3>
+                        <p>完成したストラップをお父さん・お母さんへプレゼント。</p>
+                    </div>
+                    <div class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="tech-step-item">
+                        <i class="fa-solid fa-mobile-screen-button tech-icon"></i>
+                        <h3>3. スマホをかざす</h3>
+                        <p>タグにスマホをかざすと、いつでもお子様の声や服のストーリーが見られます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gift-section">
+        <div class="container">
+            <h2 class="section-title">ママ、パパ、いつもありがとう。</h2>
+            <div class="concept-text">
+                <p class="gift-message">「この服、小さくなっちゃったけど、ずっと大好き。」</p>
+                <p>このワークショップは、単なる工作教室ではありません。<br>
+                お子様が自分の手で、かつて自分が着ていた服をリメイクし、<br>
+                感謝の気持ちを込めて親御さんに贈る、<strong>逆プレゼント企画</strong>です。</p>
+                <p>完成したストラップにスマホをかざした瞬間、<br>そこには愛しい我が子からの、素敵なサプライズが待っています。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">当日の体験内容</h2>
+            <ul class="process-list">
+                <li class="process-item">
+                    <div class="process-step">1</div>
+                    <div class="process-text"><strong>古着を持ってくる</strong><br>お家にある思い出の服をご持参ください。</div>
+                </li>
+                <li class="process-item">
+                    <div class="process-step">2</div>
+                    <div class="process-text"><strong>ストラップ作り</strong><br>ハサミを使って布を切り、パーツと組み合わせてストラップを作ります。</div>
+                </li>
+                <li class="process-item">
+                    <div class="process-step">3</div>
+                    <div class="process-text"><strong>想いのレコーディング</strong><br>タグにお子様の声やメッセージを登録します。</div>
+                </li>
+                <li class="process-item">
+                    <div class="process-step">4</div>
+                    <div class="process-text"><strong>タグを埋め込んで完成</strong><br>ストラップにカードを入れて、世界に一つのプレゼントに！</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="info">
+        <div class="container">
+            <h2 class="section-title">開催情報</h2>
+            <div style="background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: 0 auto 30px;">
+                <p><strong><i class="fa-regular fa-calendar"></i> 日時：</strong> </p>
+                <p><strong><i class="fa-solid fa-location-dot"></i> 場所：</strong> </p>
+                <p><strong><i class="fa-solid fa-shirt"></i> 持ち物：</strong> </p>
+                <p><strong><i class="fa-solid fa-yen-sign"></i> 参加費：</strong> 無料</p>
+            </div>
+            <a href="#" class="cta-button">参加申し込みはこちら</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Collaboration with</p>
+        <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 20px;">環境省 / 株式会社harch</p>
+        <p>&copy; 2025 服の想いを紡ぐプロジェクト (神奈川大学 道用ゼミ)</p>
+    </footer>
+
+</body>
+</html>

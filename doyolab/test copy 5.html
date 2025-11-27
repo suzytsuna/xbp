@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト企画書：衣類リメイクとNFC活用による環境教育</title>
+    <style>
+        /* --- 基本設定（レポートスタイル） --- */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ddd; /* 書類のような枠線 */
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        /* --- 見出し --- */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            background-color: #f4f4f4;
+            padding: 5px 10px;
+            border-left: 5px solid #666;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* --- リスト・表 --- */
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+            width: 25%;
+            font-weight: bold;
+        }
+
+        /* --- 補足情報 --- */
+        .meta-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: right;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* --- 印刷用設定 --- */
+        @media print {
+            body { padding: 0; }
+            .container { border: none; box-shadow: none; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>古着リメイクとデジタル技術を用いた環境教育ワークショップの提案</h1>
+        <div class="meta-info">
+            <p>
+
+                所属：経営工学部 道用ゼミナール<br>
+                メンバー：綱島涼香（つな） / 大久保樹（いつき）
+            </p>
+        </div>
+
+        <h2>1. プロジェクト概要</h2>
+        <p>本プロジェクトは、着なくなった衣類のアップサイクルを通じて、児童およびその保護者に対し、リユース・リサイクルの重要性を啓蒙することを目的とする。また、物理的なリメイクに加え、NFC技術を用いて「服のストーリー」を可視化することで、モノへの愛着形成を促す。</p>
+        
+        <table>
+            <tr>
+                <th>連携機関</th>
+                <td>株式会社harch、環境省</td>
+            </tr>
+            <tr>
+                <th>ターゲット</th>
+                <td>小学生およびその保護者</td>
+            </tr>
+            <tr>
+                <th>実施形態</th>
+                <td>対面ワークショップ形式</td>
+            </tr>
+        </table>
+
+        <h2>2. 企画背景・目的</h2>
+        <h3>2-1. 背景：衣類廃棄と心理的乖離</h3>
+        <p>ファストファッションの台頭により、衣類の短期廃棄が環境問題となっている。一方で、消費者が一着の服に対して抱く愛着は希薄化している。本企画では「自分の手で作り変える体験」を提供することで、この課題への心理的アプローチを試みる。</p>
+        
+        <h3>2-2. 目的：循環型社会への意識醸成</h3>
+        <p>単なる工作教室に留まらず、以下の気づきを与えることを目的とする。</p>
+        <ul>
+            <li>廃棄されるはずだったものが、価値あるものへ変化する実感（アップサイクル）</li>
+            <li>デジタル技術による、モノの背後にある「想い」の可視化</li>
+        </ul>
+
+        <h2>3. 実施内容・技術的アプローチ</h2>
+        
+        <h3>3-1. ワークショップ内容：リメイクストラップ制作</h3>
+        <p>児童が自宅から持参した着古したTシャツ等の素材を用い、ハサミと手作業のみで制作可能なストラップを作成する。</p>
+
+        <h3>3-2. NFCタグによる付加価値の創出（harch・環境省連携）</h3>
+        <p>制作したストラップには、<strong>NFCタグ</strong>を埋め込む。</p>
+        
+        <p><strong>【システム挙動と体験フロー】</strong></p>
+        <ol>
+            <li><strong>入力（Recording）：</strong> ワークショップ時に、児童がその服に関する思い出や、親への感謝のメッセージをシステムに入力（音声またはテキスト）。</li>
+            <li><strong>紐付け（Linking）：</strong> 入力データへのリンク情報をNFCタグに書き込み、ストラップ内部に封入する。</li>
+            <li><strong>体験（Action）：</strong> 保護者がスマートフォンをストラップにかざすと、ブラウザが起動し、子供からのメッセージおよび服のストーリーが表示される。</li>
+        </ol>
+
+        <h2>4. 期待される効果・意義</h2>
+        
+        <h3>教育的側面：親子間コミュニケーションの促進</h3>
+        <p>「子供から親へのプレゼント」という文脈を設定することで、ワークショップへの動機付けを行うとともに、完成品（ストラップ）を通じた家庭内での環境対話を誘発する。</p>
+        
+        <h3>社会的側面：トレーサビリティと感情価値の結合</h3>
+        <p>NFCタグ活用により、素材（古着）の情報だけでなく、個人の感情（思い出）という不可視な価値を付与する。これは、製品寿命を延ばすための新たな付加価値モデルの実証となる。</p>
+
+        <a href="./test copy 4.html">ワークショップ詳細HP</a>
+
+    </div>
+
+</body>
+</html>
